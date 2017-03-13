@@ -1,15 +1,17 @@
-import React, {Component} from 'react'
+import React,{Component} from 'react'
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <div>header...</div>
-        {this.props.children}
-        <div>footer...</div>
-      </div>
-    )
-  }
+import NewsHeader from './news_header'
+import NewsFooter from './news_footer'
+
+export default class App extends Component{
+    
+    render (){
+        return(
+            <div>
+                <NewsHeader />
+                {this.props.children}
+                <NewsFooter />
+            </div>
+        )
+    }
 }
-
-export default App

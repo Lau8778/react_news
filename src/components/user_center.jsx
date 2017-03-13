@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
+import React,{Component} from 'react'
+import {Link} from 'react-router'
 
-class UserCenter extends Component {
-  render() {
-    return (
-      <div>
-        user_center...
-      </div>
-    )
-  }
+export default class UserCenter extends Component{
+    render (){
+        return(
+            <div>
+                <h2>我是用户中心</h2>
+                <p>Hello,Bob</p>
+            </div>
+        )
+    }
 }
-
-export default UserCenter

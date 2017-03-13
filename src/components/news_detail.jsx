@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
+import React,{Component} from 'react'
+import {Link} from 'react-router'
 
-class NewsDetail extends Component {
-  render() {
-    return (
-      <div>
-        news_detail...{this.props.params.news_id}
-      </div>
-    )
-  }
+export default class NewsDetail extends Component{
+    render (){
+        return(
+            <div>
+                <h2>我是新闻详情</h2>
+                <p>{this.props.params.newsId}</p>
+            </div>
+        )
+    }
 }
-
-export default NewsDetail
