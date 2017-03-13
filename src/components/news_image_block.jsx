@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React,{Component,PropTypes} from 'react'
 import {Link} from 'react-router'
 import {Card} from 'antd'
 import axios from 'axios'
@@ -10,8 +10,6 @@ export default class ImageBlock extends Component{
             newsArr:[]
         }
     }
-    
-    
     
     //发送ajax请求
     componentWillMount (){

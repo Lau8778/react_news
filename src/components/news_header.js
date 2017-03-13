@@ -48,6 +48,7 @@ class NewsHeader extends Component{
         })
         message.success('退出成功')
     }
+    
     //点击导航标签
     handleOnClick = ({key}) =>{
         this.setState({selectedKeys:key})
@@ -56,10 +57,12 @@ class NewsHeader extends Component{
             this.setState({isLogin:true})
         }
     }
+    
     //关闭登录对话框
     handleCancel = () => {
         this.setState({ isLogin: false, isRegist:false})
     }
+    
     //处理登录/注册的表单提交
     handleSubmit = (isRegist, e) => {
         //取消表单提交的默认行为
@@ -84,6 +87,7 @@ class NewsHeader extends Component{
                         //更改状态
                         this.setState({
                             isLogin:false,
+                            isSuccess:true,
                             user:{
                                 username:result.NickUserName,
                                 password:result.UserPassword,
@@ -91,13 +95,12 @@ class NewsHeader extends Component{
                                 userFace:result.UserFace
                             }
                         })
-                        //如果选择了记住密码，则将用户信息保存到localStorage
+                        const userStr = JSON.stringify(this.state.user)
                         const form = this.props.form
-                        if(form.getFieldValue('remember')){
-                            //保存到localStorage
-                            const userStr = JSON.stringify(this.state.user)
+                        if(!form.getFieldValue('remember')){
                             localStorage.setItem('user', userStr)
                         }
+                        sessionStorage.setItem('user', userStr)
                     }
                 }
             })
@@ -166,16 +169,17 @@ class NewsHeader extends Component{
                 },
             },
         };
-       
         return(
             <header>
                 <Row>
                     <Col span={2}></Col>
                     <Col span={4}>
-                        <div className="logo">
-                            <img src={logo} alt="logo"/>
-                            <span>ReactNews</span>
-                        </div>
+                        <Link to='/'>
+                            <div className="logo">
+                                <img src={logo} alt="logo"/>
+                                <span>ReactNews</span>
+                            </div>
+                        </Link>
                     </Col>
                     <Col span={16}>
                         <Menu
