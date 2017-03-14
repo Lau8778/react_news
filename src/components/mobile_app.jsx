@@ -1,16 +1,16 @@
 import React,{Component} from 'react'
 import {BackTop} from 'antd'
-import NewsHeader from './news_header'
+import MobileNewsHeader from './mobile_news_header'
 import NewsFooter from './news_footer'
 
-import  '../css/pc.css'
+import '../css/mobile.css'
 
-export default class App extends Component{
+export default class MobileApp extends Component{
     
     render (){
         return(
-            <div>
-                <NewsHeader />
+            <div >
+                <MobileNewsHeader />
                 {this.props.children}
                 <NewsFooter />
                 <BackTop />

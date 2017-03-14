@@ -13,8 +13,6 @@ import MobileNewsContainer from './components/mobile_news_container'
 import MobileNewsDetail from './components/mobile_news_detail'
 import MobileUserCenter from './components/mobile_user_center'
 
-import  './index.css'
-
 render((
     <div>
         {/*PC端*/}
@@ -39,5 +37,4 @@ render((
             </Router>
         </MediaQuery>
     </div>
-    
 ),document.getElementById('root'))

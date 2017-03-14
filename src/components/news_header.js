@@ -35,6 +35,7 @@ class NewsHeader extends Component{
             this.setState({user:userLocal})
         }
     }
+    
     //退出
     logout = () =>{
         localStorage.user = ''
@@ -87,7 +88,6 @@ class NewsHeader extends Component{
                         //更改状态
                         this.setState({
                             isLogin:false,
-                            isSuccess:true,
                             user:{
                                 username:result.NickUserName,
                                 password:result.UserPassword,
